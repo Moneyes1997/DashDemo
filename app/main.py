@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 import pandas as pd
-from helpers import revenue_forecaster, movie_tags
+from app.helpers.helpers import revenue_forecaster, movie_tags
 from dash.dependencies import Input, Output
 
 # Format the dashboard
@@ -11,8 +11,8 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 # Read dummy data
-data_revenue = pd.read_excel('data/Dummy Data.xlsx', engine='openpyxl', sheet_name='Sheet1')
-data_movie = pd.read_excel('data/Dummy Data.xlsx', engine='openpyxl', sheet_name='Sheet2')
+data_revenue = pd.read_excel('app/data/Dummy Data.xlsx', engine='openpyxl', sheet_name='Sheet1')
+data_movie = pd.read_excel('app/data/Dummy Data.xlsx', engine='openpyxl', sheet_name='Sheet2')
 
 # Configure the dashboard layout
 app.layout = html.Div(children=[
