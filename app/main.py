@@ -6,9 +6,10 @@ import pandas as pd
 from app.helpers.helpers import revenue_forecaster, movie_tags
 from dash.dependencies import Input, Output
 
-# Format the dashboard
+# Build the dashboard app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 # Read dummy data
 data_revenue = pd.read_excel('app/data/Dummy Data.xlsx', engine='openpyxl', sheet_name='Sheet1')
